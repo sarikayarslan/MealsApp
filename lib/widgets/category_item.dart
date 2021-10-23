@@ -6,6 +6,7 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
 
+
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext context) {
