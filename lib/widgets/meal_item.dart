@@ -31,6 +31,7 @@ class MealItem extends StatelessWidget {
         return 'Affordable';
         break;
 
+
       case Affordability.Luxurious:
         return 'Luxuries';
         break;
