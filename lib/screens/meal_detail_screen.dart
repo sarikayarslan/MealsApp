@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import '../dummy-data.dart';
 
-class MealDetailScreen extends StatelessWidget {
+class MealDetailScreen extends StatefulWidget {
   static const routeName = '/meal-detail';
 
+  @override
+  State<MealDetailScreen> createState() => _MealDetailScreenState();
+}
+
+class _MealDetailScreenState extends State<MealDetailScreen> {
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -74,9 +79,7 @@ class MealDetailScreen extends StatelessWidget {
                       ),
                       title: Text(selectedMeal.steps[index]),
                     ),
-                    Divider(
-
-                    ),
+                    Divider(),
                   ],
 
                 ),
@@ -84,6 +87,13 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(child: Icon(
+        Icons.delete),
+        onPressed: (){
+        Navigator.of(context).pop(mealId);
+        },
+
       ),
     );
   }
